@@ -1,7 +1,7 @@
 import { 
     SignedIn,
     SignedOut,
-    SignInButton, 
+    // SignInButton, 
     SignUpButton,
     UserButton, 
 } from '@clerk/clerk-react';
@@ -13,7 +13,7 @@ export const Auth = () => {
             <SignedOut>
                 <Navigate to="/auth" />
                 <SignUpButton mode='modal' />
-                <SignInButton mode='modal' />
+                {/* <SignInButton mode='modal' /> */}
             </SignedOut>
             <SignedIn>
                 <Navigate to="/dashboard" />

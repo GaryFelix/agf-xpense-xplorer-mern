@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { HeroSection } from "../../sections/HeroSection"
 import { NavbarComponent } from "../Navbar/navbar"
 import { Loader } from "../../sections/Loader";
+import { Services } from "../../sections/Services";
+import { ChartData } from "../../sections/ChartData";
+import { Testimonial } from "../../sections/Testimonials";
+import { Footer } from "../../sections/Footer";
 
 
 export const Landing = () => {
@@ -26,27 +30,18 @@ export const Landing = () => {
           <section>
             <HeroSection />
           </section>
-          {/* <section className="padding">
-            <Products />
-          </section>
-          <section className="padding">
-            <SuperQuality />
-          </section>
-          <section className="padding-x py-10">
+          <section>
             <Services />
           </section>
-          <section className="padding">
-            <Offers />
+          <section>
+            <ChartData />
           </section>
-          <section className="bg-[#4aa9ba38] padding">
-            <CustomerReviews />
-          </section>
-          <section className="padding-x sm:py-32 py-16 w-full">
-            <Subscribe />
+          <section>
+            <Testimonial />
           </section>
           <section className="padding bg-black padding-x padding-t pb-8">
             <Footer />
-          </section> */}
+          </section>
         </main>
       )}
     </div>

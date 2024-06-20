@@ -2,6 +2,9 @@ import express, { Express } from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import xpenseRecordRouter from "./routes/xpense-routes";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 3001;
@@ -10,12 +13,14 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
 
-//mongoDB Connection
-const mongoURI: string =
-"mongodb+srv://2k19cse020:JyjMdPz7e0pJT93V@xpensexplorer.kusdqe0.mongodb.net/";
+const URI = process.env.MONGODB_URI;
+
+if(!URI){
+    throw new Error("The MONGODB_URI environment variable is not set.");
+}
 
 mongoose
-.connect(mongoURI)
+.connect(URI)
 .then(() => console.log("MongoDB is connected"))
 .catch((err) => console.log("Not connected to MongoDB: ", err));
 

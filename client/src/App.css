@@ -5,6 +5,41 @@
   text-align: center;
 }
 
+::selection {
+  background-color: #0aa50a;
+  color: white;
+}
+
+/* scrollbar css */
+
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #14ff00;
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

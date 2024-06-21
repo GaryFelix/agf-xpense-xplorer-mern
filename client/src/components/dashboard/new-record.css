@@ -1,0 +1,27 @@
+.records {
+    --sb-track-color: #232E33;
+    --sb-thumb-color: #14ff00;
+    --sb-size: 9px;
+  }
+  
+  .records::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  .records::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+  }
+  
+  .records::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+    
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    .records {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }

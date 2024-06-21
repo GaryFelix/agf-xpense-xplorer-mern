@@ -3,6 +3,7 @@ import { siteLogo } from "../../assets/images";
 import { XpenseXplorerRecord } from "./xpense-xplorer-record";
 import { XpenseXplorerList } from "./xpense-xplorer-list";
 import { UserButton } from "@clerk/clerk-react";
+import './new-record.css';
 
 export const NewRecord = () => {
   return (
@@ -30,9 +31,13 @@ export const NewRecord = () => {
           </NavLink>
         </ul>
       </nav>
-      <div className="bg-[#eaeaea] w-full text-black">
-        <XpenseXplorerRecord />
-        <XpenseXplorerList />
+      <div className="records bg-[#eaeaea] w-full text-black  overflow-y-scroll">
+        <div className="">
+          <XpenseXplorerRecord />
+        </div>
+        <div className="">
+          <XpenseXplorerList />
+        </div>
       </div>
     </section>
   );

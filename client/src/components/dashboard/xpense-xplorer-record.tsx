@@ -39,32 +39,33 @@ export const XpenseXplorerRecord = () => {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-field">
-          <label>Description: </label>
+    <div className="form-container flex flex-col justify-center items-start">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col pt-2 pl-12 items-start h-full">
+      <h2 className="text-[30px] font-teko">Add New Record: </h2>
+        <div className=" w-[90%] flex gap-5 p-2">
+          <label className="text-[25px] p-2">Description: </label>
           <input
             type="text"
             required
-            className="input"
+            className="input text-[25px] bg-white border-2 border-black rounded-[5px] w-full p-2"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <div className="form-field">
-          <label>Amount: </label>
+        <div className=" w-[90%] flex gap-5 p-2">
+          <label className="text-[25px] p-2">Amount: </label>
           <input
             type="number"
             required
-            className="input"
+            className="input text-[25px] bg-white border-2 border-black rounded-[5px] w-full p-2"
             value={amount}
             onChange={(e) => {
               setAmount(e.target.value);
             }}
           />
         </div>
-        <div>
-          <label>Choose Income or Expense: </label>
+        <div className=" w-[90%] flex gap-5 p-2">
+          <label className="text-[25px] p-2">Choose Income or Expense: </label>
           {/* <input type="checkbox" />Income
             <input type="checkbox" />Expense */}
           <input
@@ -76,7 +77,7 @@ export const XpenseXplorerRecord = () => {
             checked={transactionType === "expense"}
             onChange={(e) => setTransactionType(e.target.value)}
           />
-          <label htmlFor="expense">Expense</label>
+          <label htmlFor="expense" className="text-[25px] p-2">Expense</label>
           &nbsp;&nbsp;
           <input
             type="radio"
@@ -87,15 +88,15 @@ export const XpenseXplorerRecord = () => {
             checked={transactionType === "income"}
             onChange={(e) => setTransactionType(e.target.value)}
           />
-          <label htmlFor="expense">Income</label>
+          <label htmlFor="expense" className="text-[25px] p-2">Income</label>
         </div>
-        <div className="form-field">
+        <div className=" w-[90%] flex p-2">
           {transactionType === "expense" && (
-            <div>
-              <label>Expense Category: </label>
+            <div className=" w-full flex justify-start">
+              <label className="text-[22px] font-montserrat p-2 w-2/5 text-left ">Expense Category: </label>
               <select
                 required
-                className="input"
+                className="text-[20px] font-montserrat bg-white   rounded-[5px] w-full appearance-none"
                 value={category}
                 onChange={(e) => {
                   setCategory(e.target.value);
@@ -119,11 +120,11 @@ export const XpenseXplorerRecord = () => {
             </div>
           )}
           {transactionType === "income" && (
-            <div>
-              <label>Income Category: </label>
+            <div className="b w-full flex justify-start">
+              <label className="text-[22px] font-montserrat p-2 w-2/5 text-left ">Income Category: </label>
               <select
                 required
-                className="input"
+                className="text-[25px] bg-white rounded-[5px] w-full p-2 appearance-none"
                 value={category}
                 onChange={(e) => {
                   setCategory(e.target.value);
@@ -141,10 +142,10 @@ export const XpenseXplorerRecord = () => {
             </div>
           )}
         </div>
-        <div className="form-field">
-          <label>Frequency: </label>
+        <div className=" w-[90%] flex gap-5 p-2">
+          <label className="text-[22px] font-montserrat p-2 w-2/5 text-left ">Frequency: </label>
           <select
-            className="input"
+            className="text-[25px] bg-white border-2 border-black rounded-[5px] w-full p-2 appearance-none"
             value={frequency}
             onChange={(e) => {
               setFrequency(e.target.value);
@@ -157,11 +158,11 @@ export const XpenseXplorerRecord = () => {
             <option value="Yearly">Yearly</option>
           </select>
         </div>
-        <div className="form-field">
-          <label>Payment Method: </label>
+        <div className=" w-[90%] flex gap-5 p-2">
+          <label className="text-[22px] font-montserrat p-2 w-2/5 text-left ">Payment Method: </label>
           <select
             required
-            className="input"
+            className="text-[25px] bg-white border-2 border-black rounded-[5px] w-full p-2 appearance-none"
             value={paymentMethod}
             onChange={(e) => {
               setPaymentMethod(e.target.value);
@@ -175,8 +176,8 @@ export const XpenseXplorerRecord = () => {
             <option value="Bank Transfer">Bank Transfer</option>
           </select>
         </div>
-        <button type="submit" className="button">
-          Submit
+        <button type="submit" className="mt-2 w-1/5 text-[18px] text-black font-montserrat bg-white border-2 border-black hover:bg-[#cecece8c]">
+          SUBMIT
         </button>
       </form>
     </div>

@@ -7,6 +7,7 @@ import report from "../images/report.png";
 import testimonial1 from "../images/testimonial1.jpg";
 import testimonial2 from "../images/testimonial2.jpg";
 import heroBg from "../images/herobg.png";
+import loader from "../images/loader.gif";
 
 export{
     services1,
@@ -17,5 +18,6 @@ export{
     testimonial1,
     testimonial2,
     siteLogo,
-    heroBg
+    heroBg,
+    loader,
 }
